@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Kimani Wa Karangu — Gubernatorial Aspirant, Nyandarua County 2027</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple-deep:   #1a0533;
+      --purple-dark:   #2d1057;
+      --purple-mid:    #5b2d8e;
+      --purple-bright: #8b4ecf;
+      --purple-light:  #b280e8;
+      --purple-pale:   #e8d5ff;
+      --gold:          #d4a017;
+      --gold-light:    #f0c84a;
+      --white:         #ffffff;
+      --off-white:     #f9f5ff;
+      --text-dark:     #1a0533;
+      --text-muted:    #6b4fa0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--off-white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(26, 5, 51, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(178, 128, 232, 0.2);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    .nav-donate {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--purple-deep) !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 600 !important;
+      transition: opacity 0.2s !important;
+    }
+    .nav-donate:hover { opacity: 0.88; color: var(--purple-deep) !important; }
+
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+      z-index: 200;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gold-light);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile menu drawer */
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: 64px;
+      left: 0; right: 0;
+      background: rgba(26, 5, 51, 0.98);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(178, 128, 232, 0.2);
+      padding: 1.5rem 2rem 2rem;
+      z-index: 99;
+      flex-direction: column;
+      gap: 0;
+      transform: translateY(-8px);
+      opacity: 0;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .nav-mobile.open {
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .nav-mobile a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(178,128,232,0.12);
+      transition: color 0.2s;
+      display: block;
+    }
+
+    .nav-mobile a:hover { color: var(--gold-light); }
+
+    .nav-mobile a:last-child { border-bottom: none; }
+
+    .nav-mobile .mobile-donate {
+      margin-top: 1rem;
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--purple-deep) !important;
+      padding: 0.7rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 700;
+      text-align: center;
+      border-bottom: none !important;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse at 70% 20%, rgba(139, 78, 207, 0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 80%, rgba(91, 45, 142, 0.4) 0%, transparent 50%),
+        linear-gradient(160deg, var(--purple-deep) 0%, var(--purple-dark) 45%, #3d1570 100%);
+      display: flex;
+      align-items: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b280e8' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 1.5rem;
+      padding: 0.35rem 1rem;
+      border: 1px solid rgba(212, 160, 23, 0.4);
+      border-radius: 999px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--purple-pale);
+      margin-bottom: 2rem;
+    }
+
+    .hero-tagline span { color: var(--gold-light); }
+
+    .hero-body {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 680px;
+      margin-bottom: 2.8rem;
+      line-height: 1.75;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--purple-bright) 0%, var(--purple-mid) 100%);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 2px solid transparent;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(139, 78, 207, 0.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(139,78,207,0.55); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 2px solid rgba(255,255,255,0.4);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--gold-light); background: rgba(255,255,255,0.06); }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--purple-deep);
+      padding: 0.85rem 2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-gold:hover { opacity: 0.88; transform: translateY(-2px); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 4px;
+      background: linear-gradient(90deg, var(--purple-mid), var(--purple-bright), var(--gold), var(--purple-bright), var(--purple-mid));
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 2rem; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--purple-bright);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--purple-deep);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .section-body {
+      font-size: 1.05rem;
+      color: #4a3570;
+      max-width: 720px;
+      line-height: 1.8;
+    }
+
+    /* ── ABOUT COUNTY ── */
+    .about-section {
+      background: white;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-dark) 100%);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::after {
+      content: '';
+      position: absolute;
+      top: -20px; right: -20px;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(178, 128, 232, 0.12);
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+    }
+
+    /* ── COUNTY DETAIL ── */
+    .county-detail {
+      background: var(--off-white);
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .detail-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      border-left: 4px solid var(--purple-bright);
+      box-shadow: 0 2px 16px rgba(91, 45, 142, 0.08);
+    }
+
+    .detail-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--purple-deep);
+      margin-bottom: 0.75rem;
+    }
+
+    .detail-card p {
+      font-size: 0.95rem;
+      color: #5a4080;
+      line-height: 1.7;
+    }
+
+    /* ── VOTER REGISTRATION ── */
+    .voter-section {
+      background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-dark) 60%, #3d1570 100%);
+      color: white;
+    }
+
+    .voter-section .section-title { color: white; }
+    .voter-section .section-label { color: var(--gold-light); }
+
+    .voter-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .voter-body {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .voter-link {
+      display: inline-block;
+      color: var(--gold-light);
+      text-decoration: underline;
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    .voter-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(178,128,232,0.3);
+      border-radius: 20px;
+      padding: 2.5rem;
+    }
+
+    .voter-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--gold-light);
+      margin-bottom: 1rem;
+    }
+
+    .voter-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .voter-card li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .voter-card li::before {
+      content: '✦';
+      color: var(--gold-light);
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-size: 0.75rem;
+    }
+
+    /* ── GET INVOLVED ── */
+    .involve-section { background: white; }
+
+    .involve-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .involve-card {
+      border-radius: 16px;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(91,45,142,0.06) 0%, rgba(139,78,207,0.1) 100%);
+      border: 1px solid rgba(139,78,207,0.15);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .involve-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(91,45,142,0.15);
+    }
+
+    .involve-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .involve-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--purple-deep);
+      margin-bottom: 0.6rem;
+    }
+
+    .involve-card p {
+      font-size: 0.9rem;
+      color: #5a4080;
+      line-height: 1.6;
+    }
+
+    /* ── VOLUNTEER FORM ── */
+    .form-section {
+      background: linear-gradient(135deg, #f3ecff 0%, #ead5ff 100%);
+    }
+
+    .form-wrap {
+      max-width: 600px;
+      margin: 3rem auto 0;
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 4px 40px rgba(91,45,142,0.12);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--purple-deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid rgba(139,78,207,0.2);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--purple-bright);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-submit {
+      width: 100%;
+      padding: 0.9rem;
+      background: linear-gradient(135deg, var(--purple-mid) 0%, var(--purple-bright) 100%);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .form-submit:hover { opacity: 0.88; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--purple-deep);
+      color: rgba(255,255,255,0.65);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-hashtags {
+      font-size: 0.85rem;
+      color: var(--purple-light);
+      margin: 0.75rem 0;
+    }
+
+    .footer-contact {
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    .footer-contact a { color: var(--purple-light); text-decoration: none; }
+    .footer-contact a:hover { color: var(--gold-light); }
+
+    footer small {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ── FUNDRAISING EVENT ── */
+    .event-section {
+      background: linear-gradient(135deg, #f3ecff 0%, #ead5ff 100%);
+    }
+
+    .event-banner {
+      max-width: 780px;
+      margin: 3rem auto 0;
+      background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-dark) 60%, #3d1570 100%);
+      border-radius: 24px;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 50px rgba(91,45,142,0.3);
+    }
+
+    .event-banner::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(178,128,232,0.08);
+    }
+
+    .event-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .event-subtitle {
+      font-size: 0.9rem;
+      color: var(--purple-pale);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .event-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .event-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .event-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .event-detail-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.2rem;
+    }
+
+    .event-detail-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .event-cta-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(178,128,232,0.25);
+    }
+
+    .event-cta-block {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .event-cta-block h4 {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .event-cta-block a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 0.25rem;
+      transition: color 0.2s;
+    }
+
+    .event-cta-block a:hover { color: var(--gold-light); }
+
+    .event-social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .social-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(178,128,232,0.3);
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .social-pill:hover {
+      background: rgba(178,128,232,0.2);
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+    }
+
+    /* ── CANDIDATE PHOTO SECTION ── */
+    .candidate-section {
+      background: white;
+      padding: 5rem 2rem;
+    }
+
+    .candidate-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .candidate-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1rem;
+    }
+
+    .photo-main {
+      grid-column: 1 / -1;
+    }
+
+    .photo-placeholder {
+      background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-dark) 60%, #3d1570 100%);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .photo-main .photo-placeholder {
+      height: 520px;
+    }
+
+    .photo-sm .photo-placeholder {
+      height: 180px;
+    }
+
+    .photo-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      position: absolute;
+      inset: 0;
+    }
+
+    .photo-placeholder-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      z-index: 1;
+    }
+
+    .photo-placeholder-icon {
+      font-size: 2.5rem;
+      opacity: 0.3;
+      z-index: 1;
+    }
+
+    .photo-sm .photo-placeholder-icon {
+      font-size: 1.8rem;
+    }
+
+    .photo-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(26,5,51,0.85) 0%, transparent 100%);
+      padding: 1rem 1.2rem 0.8rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+      z-index: 2;
+    }
+
+    .candidate-bio h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--purple-deep);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .candidate-bio .section-label { margin-bottom: 0.5rem; }
+
+    .candidate-bio p {
+      font-size: 1rem;
+      color: #4a3570;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .bio-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .bio-highlight {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+      color: #4a3570;
+    }
+
+    .bio-highlight::before {
+      content: '✦';
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-size: 0.7rem;
+    }
+
+    /* ── ZEFFY DONATE SECTION ── */
+    .zeffy-section {
+      background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-dark) 60%, #3d1570 100%);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .zeffy-section .section-label { color: var(--gold-light); }
+    .zeffy-section .section-title { color: white; margin-bottom: 1rem; }
+
+    .zeffy-body {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+
+    .zeffy-embed-wrap {
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(178,128,232,0.25);
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 3rem 2rem;
+    }
+
+    .zeffy-placeholder-text {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .zeffy-placeholder-icon { font-size: 3rem; opacity: 0.3; }
+
+    .zeffy-alt-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--purple-deep);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.9rem 2.2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .zeffy-alt-link:hover { opacity: 0.88; transform: translateY(-2px); }
+
+    /* ── FORM SUCCESS/ERROR STATES ── */
+    .form-message {
+      display: none;
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+    .form-message.success {
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.3);
+      color: #166534;
+    }
+    .form-message.error {
+      background: rgba(239,68,68,0.08);
+      border: 1px solid rgba(239,68,68,0.25);
+      color: #991b1b;
+    }
+
+    .form-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* ── HERO PHOTO LAYOUT ── */
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1100px;
+    }
+
+    .hero-text { max-width: 680px; }
+
+    .hero-portrait {
+      width: 340px;
+      flex-shrink: 0;
+    }
+
+    .hero-portrait .photo-placeholder {
+      height: 520px;
+      width: 340px;
+      border-radius: 20px;
+      border: 3px solid rgba(212,160,23,0.4);
+      box-shadow: 0 8px 50px rgba(0,0,0,0.35);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .candidate-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-portrait { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .voter-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero h1 { font-size: 2.4rem; }
+      .form-wrap { padding: 2rem 1.5rem; }
+      .candidate-photos { grid-template-columns: 1fr; }
+      .photo-sm .photo-placeholder { height: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">Dr. Kimani Wa Karangu</a>
+    <ul class="nav-links">
+      <li><a href="#candidate">Meet Kimani</a></li>
+      <li><a href="#about">About Nyandarua</a></li>
+      <li><a href="#voters">Voter Registration</a></li>
+      <li><a href="#event">Events</a></li>
+      <li><a href="#involve">Get Involved</a></li>
+      <li><a href="#donate" class="nav-donate">Donate</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <!-- Mobile drawer -->
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#candidate" onclick="closeMenu()">Meet Kimani</a>
+    <a href="#about" onclick="closeMenu()">About Nyandarua</a>
+    <a href="#voters" onclick="closeMenu()">Voter Registration</a>
+    <a href="#event" onclick="closeMenu()">Events</a>
+    <a href="#involve" onclick="closeMenu()">Get Involved</a>
+    <a href="#donate" class="mobile-donate" onclick="closeMenu()">💛 Donate</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-eyebrow">Gubernatorial Aspirant — Nyandarua County 2027</span>
+      <h1>DR. <span>KIMANI</span><br>WA KARANGU</h1>
+      <p class="hero-tagline">
+        A Stronger Nyandarua <span>·</span> A Prosperous Future <span>·</span> A United County
+      </p>
+      <p style="font-size:0.9rem;font-weight:600;letter-spacing:0.06em;color:var(--gold-light);margin-bottom:1rem;text-transform:uppercase;">
+        Together, We Can Build a Better Nyandarua
+      </p>
+      <p class="hero-body">
+        Support Kimani's agenda for County Governor of Nyandarua. The agenda is focused on integrity, accountability, and quality service in every corner of Nyandarua. Together, we will rebuild public trust, create opportunities for our youth, empower our farmers, improve healthcare and education, and ensure that every resident is treated with fairness and respect. Our mission is to restore the dignity of the people of Nyandarua through honest, inclusive, and people-centered leadership.
+      </p>
+      <div class="hero-buttons">
+        <a href="#involve" class="btn-primary">Get Involved</a>
+        <a href="https://verify.iebc.or.ke/" target="_blank" rel="noopener" class="btn-secondary">Verify Voter Status</a>
+        <a href="#donate" class="btn-gold">Donate</a>
+      </div>
+    </div>
+    <!-- HERO PORTRAIT — to activate: uncomment the <img> tag and set src to your photo file -->
+    <div class="hero-portrait">
+      <div class="photo-placeholder">
+        <img src="../DADS/IMG_5849.JPG.jpeg" alt="Dr. Kimani Wa Karangu" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CANDIDATE BIO & PHOTOS -->
+<section class="candidate-section" id="candidate">
+  <div class="candidate-inner">
+    <!-- PHOTOS (left column) -->
+    <div class="candidate-photos">
+      <!-- Main photo — to activate: uncomment <img> and set src -->
+      <div class="photo-main">
+        <div class="photo-placeholder">
+          <img src="../DADS/IMG_5852.JPG.jpeg" alt="Dr. Kimani Wa Karangu — Official Portrait" />
+          <div class="photo-caption">Dr. Kimani Wa Karangu — Gubernatorial Aspirant 2027</div>
+        </div>
+      </div>
+      <!-- Secondary photo 1 -->
+      <div class="photo-sm">
+        <div class="photo-placeholder">
+          <img src="../DADS/IMG_5857.JPG.jpeg" alt="Dr. Kimani on the campaign trail" />
+          <div class="photo-caption">On the campaign trail</div>
+        </div>
+      </div>
+      <!-- Secondary photo 2 -->
+      <div class="photo-sm">
+        <div class="photo-placeholder">
+          <img src="../DADS/IMG_5832.JPG.jpeg" alt="Dr. Kimani for Nyandarua people" />
+          <div class="photo-caption">forthe people of Nyandarua</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BIO (right column) -->
+    <div class="candidate-bio">
+      <p class="section-label">The Candidate</p>
+      <h2>Meet Dr. Kimani Wa Karangu</h2>
+      <p>
+        Dr. Kimani Wa Karangu is a son of Nyandarua — shaped by the highlands, the hard work of its farming families, and a deep belief that honest leadership can transform this county. With a distinguished academic and professional background, Kimani brings the expertise and integrity Nyandarua deserves at the helm.
+      </p>
+      <p>
+        His vision is simple: a county where farmers are protected, youth are empowered, healthcare is accessible to all, and public resources are managed with full transparency and accountability.
+      </p>
+      <div class="bio-highlights">
+        <div class="bio-highlight">Academic excellence and professional achievement spanning decades of public service</div>
+        <div class="bio-highlight">Deep roots in Nyandarua — committed to the people, not the politics</div>
+        <div class="bio-highlight">Champion of agricultural development, education reform, and healthcare access</div>
+        <div class="bio-highlight">Track record of community engagement across all 5 constituencies</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT NYANDARUA -->
+<section class="about-section" id="about">
+  <div class="section-inner">
+    <p class="section-label">Our Home</p>
+    <h2 class="section-title">About Nyandarua County</h2>
+    <p class="section-body">
+      Nyandarua County sits in the central highlands of Kenya, nestled against the Aberdare Range. It is one of Kenya's most agriculturally rich counties, a land of rolling green plateaus, highland forests, dairy farms, and potato fields that feed the nation. The people of Nyandarua — hardworking, resilient, and deeply rooted in community — deserve leadership that matches their spirit.
+    </p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number">~721K</span>
+        <span class="stat-label">Estimated population (2025)</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">5</span>
+        <span class="stat-label">Constituencies: Kinangop, Kipipiri, Ol Kalou, Ol Jorok, Ndaragwa</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">25</span>
+        <span class="stat-label">Electoral wards across the county</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">3,286 km²</span>
+        <span class="stat-label">Total geographical area</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTY DETAIL CARDS -->
+<section class="county-detail">
+  <div class="section-inner">
+    <p class="section-label">County Profile</p>
+    <h2 class="section-title">The Heart of Nyandarua</h2>
+
+    <div class="detail-grid">
+      <div class="detail-card">
+        <h3>Agricultural Heritage</h3>
+        <p>Nyandarua is Kenya's leading producer of Irish potatoes, cabbages, and dairy products. The county feeds millions of Kenyans every day. Yet our farmers still face poor roads, market volatility, and crop disease. Kimani's plan is to modernise agricultural infrastructure and establish farmer cooperatives that guarantee fair prices.</p>
+      </div>
+      <div class="detail-card">
+        <h3>Natural Resources</h3>
+        <p>The Aberdare Range — rising to 3,999 metres — is the county's most iconic natural landmark, a critical water tower for the nation and a draw for local and international tourism. Protecting this ecosystem while creating sustainable livelihoods around it is a core pillar of the agenda.</p>
+      </div>
+      <div class="detail-card">
+        <h3>Youth &amp; Sports Legacy</h3>
+        <p>Nyandarua is home to world-class athletes including Catherine Ndereba, John Ngugi, and the late Samuel Wanjiru. The county's talent is unmatched — but requires investment in sports facilities, youth programs, and vocational training to unlock its full potential.</p>
+      </div>
+      <div class="detail-card">
+        <h3>Education &amp; Opportunity</h3>
+        <p>Nyandarua now has a university college under Dedan Kimathi University, but more must be done. The agenda will push for expanded technical colleges, scholarship programs for bright students from low-income families, and digital learning infrastructure across all 5 constituencies.</p>
+      </div>
+      <div class="detail-card">
+        <h3>Healthcare Access</h3>
+        <p>County hospitals in Ol Kalou, Engineer, and Nyahururu serve thousands of residents. Kimani's administration will prioritise equipping health facilities with modern supplies, hiring qualified medical staff, and ensuring no Nyandarua resident is turned away from care due to shortage of resources.</p>
+      </div>
+      <div class="detail-card">
+        <h3>Economic Growth</h3>
+        <p>Nyandarua's economy is the 17th largest in Kenya with a GDP of $4.6B at PPP, and is among the 5 richest counties by per capita income. With the right leadership, this foundation can be transformed into inclusive prosperity — better roads, reliable water, and fair opportunities for every resident.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOTER REGISTRATION -->
+<section class="voter-section" id="voters">
+  <div class="section-inner">
+    <div class="voter-inner">
+      <div>
+        <p class="section-label">Your Voice Matters</p>
+        <h2 class="section-title">Voter Registration &amp; Electoral Information</h2>
+        <p class="voter-body">
+          The Independent Electoral and Boundaries Commission (IEBC) requires all eligible Kenyan citizens to register as voters before participating in elections. Your vote is the foundation of change in Nyandarua. Registration requires a valid Kenyan National ID card or Kenyan passport and is conducted at designated IEBC registration centres across the county.
+        </p>
+        <p class="voter-body">
+          To verify your voter registration status, visit:
+        </p>
+        <a class="voter-link" href="https://verify.iebc.or.ke/" target="_blank" rel="noopener">https://verify.iebc.or.ke/ ↗</a><br>
+        <a class="voter-link" href="https://www.iebc.or.ke/" target="_blank" rel="noopener">IEBC Official Website ↗</a>
+      </div>
+      <div class="voter-card">
+        <h3>Registration Requirements</h3>
+        <ul>
+          <li>Valid Kenyan National ID or Kenyan Passport</li>
+          <li>Must be 18 years of age or older</li>
+          <li>Register at your nearest IEBC centre in Nyandarua</li>
+          <li>Ensure your details are correctly captured</li>
+          <li>Confirm your ward and polling station</li>
+          <li>Registered voters in Nyandarua: check your status before election day</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNDRAISING EVENT -->
+<section class="event-section" id="event">
+  <div class="section-inner">
+    <p class="section-label" style="text-align:center;">Upcoming Event</p>
+    <h2 class="section-title" style="text-align:center;">Fundraising Dinner</h2>
+
+    <div class="event-banner">
+      <p class="event-title">FUNDRAISING</p>
+      <p class="event-subtitle">Invest in Leadership. Invest in Our Future.</p>
+
+      <div class="event-details">
+        <div class="event-detail-item">
+          <span class="event-icon">📅</span>
+          <div>
+            <div class="event-detail-label">Date</div>
+            <div class="event-detail-value">25 July 2026</div>
+          </div>
+        </div>
+        <div class="event-detail-item">
+          <span class="event-icon">📍</span>
+          <div>
+            <div class="event-detail-label">Venue</div>
+            <div class="event-detail-value">TBA</div>
+          </div>
+        </div>
+        <div class="event-detail-item">
+          <span class="event-icon">🕑</span>
+          <div>
+            <div class="event-detail-label">Time</div>
+            <div class="event-detail-value">2:00PM – 6:00PM</div>
+          </div>
+        </div>
+        <div class="event-detail-item">
+          <span class="event-icon">🎟</span>
+          <div>
+            <div class="event-detail-label">Tickets</div>
+            <div class="event-detail-value" style="color:var(--gold-light);">FREE</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-cta-row">
+        <div class="event-cta-block">
+          <h4>RSVP &amp; More Info</h4>
+          <a href="tel:6044018371">📞 604 401 8371</a>
+          <a href="mailto:p.karangu@alumni.ubc.ca">✉ p.karangu@alumni.ubc.ca</a>
+        </div>
+        <div class="event-cta-block">
+          <h4>Connect With Us</h4>
+          <div class="event-social-links">
+            <a class="social-pill" href="https://chat.whatsapp.com/HW8raGgeqRl4OO8XJi4qK0?mode=gi_t" target="_blank" rel="noopener">
+              💬 Join WhatsApp Group
+            </a>
+            <a class="social-pill" href="https://www.facebook.com/profile.php?id=61552391662261" target="_blank" rel="noopener">
+              👍 Follow on Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GET INVOLVED -->
+<section class="involve-section" id="involve">
+  <div class="section-inner">
+    <p class="section-label">Join the Movement</p>
+    <h2 class="section-title">How You Can Help</h2>
+    <p class="section-body">
+      Change in Nyandarua begins with the people of Nyandarua. Volunteers are the backbone of this agenda — from grassroots mobilisation in Kinangop to outreach in Ndaragwa. Here is how you can be part of the movement.
+    </p>
+
+    <div class="involve-grid">
+      <div class="involve-card">
+        <div class="involve-icon">🤝</div>
+        <h3>Volunteer</h3>
+        <p>Join ward-level teams across all 25 wards. Help with door-to-door outreach, community meetings, and voter education drives in your area.</p>
+      </div>
+      <div class="involve-card">
+        <div class="involve-icon">📢</div>
+        <h3>Spread the Word</h3>
+        <p>Share the agenda on social media using <strong>#KimaniForNyandarua</strong>. Your network is powerful — help us reach every corner of the county.</p>
+      </div>
+      <div class="involve-card">
+        <div class="involve-icon">🌾</div>
+        <h3>Community Mobilisation</h3>
+        <p>Organise community barazas, farmers' forums, and youth meetings in your village, ward, or constituency to discuss the agenda.</p>
+      </div>
+      <div class="involve-card">
+        <div class="involve-icon">💛</div>
+        <h3>Donate</h3>
+        <p>Financial contributions — large or small — fuel the agenda. Your support helps us reach more people, print more materials, and hold more events.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEER FORM -->
+<section class="form-section">
+  <div class="section-inner">
+    <p class="section-label" style="text-align:center;">Sign Up</p>
+    <h2 class="section-title" style="text-align:center;">Volunteer for the Agenda</h2>
+
+    <div class="form-wrap">
+      <div class="form-message success" id="form-success">
+        ✅ Thank you for signing up! The agenda team will be in touch soon.
+      </div>
+      <div class="form-message error" id="form-error">
+        ⚠️ Something went wrong. Please try again or contact us directly at p.karangu@alumni.ubc.ca
+      </div>
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Your full name" />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="+254 7XX XXX XXX" />
+      </div>
+      <div class="form-group">
+        <label for="ward">Your Ward / Constituency</label>
+        <select id="ward">
+          <option value="">Select your constituency</option>
+          <optgroup label="Kinangop">
+            <option>Magumu, Kinangop</option>
+            <option>Njabini/Kiburu, Kinangop</option>
+            <option>Nyakio, Kinangop</option>
+            <option>Engineer, Kinangop</option>
+          </optgroup>
+          <optgroup label="Kipipiri">
+            <option>Wanjohi, Kipipiri</option>
+            <option>Kipipiri, Kipipiri</option>
+            <option>Geta, Kipipiri</option>
+            <option>Githioro, Kipipiri</option>
+          </optgroup>
+          <optgroup label="Ol Kalou">
+            <option>Karau, Ol Kalou</option>
+            <option>Kanjuiri Range, Ol Kalou</option>
+            <option>Mirangine, Ol Kalou</option>
+            <option>Kaimbaga, Ol Kalou</option>
+            <option>Rurii, Ol Kalou</option>
+          </optgroup>
+          <optgroup label="Ol Jorok">
+            <option>Gathanji, Ol Jorok</option>
+            <option>Gatimu, Ol Jorok</option>
+            <option>Weru, Ol Jorok</option>
+            <option>Charagita, Ol Jorok</option>
+          </optgroup>
+          <optgroup label="Ndaragwa">
+            <option>Leshau/Pondo, Ndaragwa</option>
+            <option>Shamata, Ndaragwa</option>
+            <option>North Ndaragwa, Ndaragwa</option>
+            <option>Muhalachi, Ndaragwa</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="role">How Would You Like to Help?</label>
+        <select id="role">
+          <option value="">Select a role</option>
+          <option>Door-to-door outreach</option>
+          <option>Community baraza organising</option>
+          <option>Social media &amp; communications</option>
+          <option>Voter registration drives</option>
+          <option>Youth mobilisation</option>
+          <option>Farmers' forum coordination</option>
+          <option>General volunteering</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message (optional)</label>
+        <textarea id="message" placeholder="Tell us more about yourself or any ideas you have for the agenda..."></textarea>
+      </div>
+      <button class="form-submit" id="form-submit" type="button" onclick="submitVolunteerForm()">
+        Submit — Join the Movement
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  /*
+   * ══════════════════════════════════════════════════════════════════
+   * GOOGLE SHEETS SETUP — ONE-TIME, ~5 MINUTES
+   * ══════════════════════════════════════════════════════════════════
+   *
+   * STEP 1: Create your Google Sheet
+   *   - Go to sheets.google.com → create a new sheet
+   *   - Name the columns in row 1 (A→F):
+   *     Timestamp | Full Name | Phone | Ward | Role | Message
+   *
+   * STEP 2: Create the Apps Script
+   *   - In your Sheet: Extensions → Apps Script
+   *   - Delete any existing code and paste this entire block:
+   *
+   *     function doPost(e) {
+   *       var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+   *       var data = JSON.parse(e.postData.contents);
+   *       sheet.appendRow([
+   *         new Date(),
+   *         data.name,
+   *         data.phone,
+   *         data.ward,
+   *         data.role,
+   *         data.message
+   *       ]);
+   *       return ContentService
+   *         .createTextOutput(JSON.stringify({ result: 'success' }))
+   *         .setMimeType(ContentService.MimeType.JSON);
+   *     }
+   *
+   * STEP 3: Deploy the script
+   *   - Click "Deploy" → "New deployment"
+   *   - Type: Web App
+   *   - Execute as: Me
+   *   - Who has access: Anyone
+   *   - Click Deploy → copy the Web App URL
+   *
+   * STEP 4: Paste the URL below, replacing YOUR_APPS_SCRIPT_URL_HERE
+   *
+   * ══════════════════════════════════════════════════════════════════
+   */
+
+  var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxjdLsEhe1vcIBGhsMCo1w1VAk8mUj8Pxv2mOl7uiSNpOjJJyBThKS7KMo__rG7wPy/exec';
+
+  function submitVolunteerForm() {
+    var name    = document.getElementById('name').value.trim();
+    var phone   = document.getElementById('phone').value.trim();
+    var ward    = document.getElementById('ward').value;
+    var role    = document.getElementById('role').value;
+    var message = document.getElementById('message').value.trim();
+
+    // Basic validation
+    if (!name || !phone || !ward || !role) {
+      var errEl = document.getElementById('form-error');
+      errEl.textContent = '⚠️ Please fill in all required fields (Name, Phone, Ward, Role).';
+      errEl.style.display = 'block';
+      document.getElementById('form-success').style.display = 'none';
+      return;
+    }
+
+    if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
+      alert('⚙️ Setup needed: paste your Google Apps Script URL into the APPS_SCRIPT_URL variable in the page source. See the comments above submitVolunteerForm() for instructions.');
+      return;
+    }
+
+    var btn = document.getElementById('form-submit');
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+
+    fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, phone: phone, ward: ward, role: role, message: message })
+    })
+    .then(function() {
+      document.getElementById('form-success').style.display = 'block';
+      document.getElementById('form-error').style.display = 'none';
+      document.getElementById('name').value = '';
+      document.getElementById('phone').value = '';
+      document.getElementById('ward').value = '';
+      document.getElementById('role').value = '';
+      document.getElementById('message').value = '';
+      btn.textContent = '✅ Submitted!';
+    })
+    .catch(function(err) {
+      document.getElementById('form-error').style.display = 'block';
+      document.getElementById('form-error').textContent = '⚠️ Something went wrong. Please try again or contact us directly at p.karangu@alumni.ubc.ca';
+      document.getElementById('form-success').style.display = 'none';
+      btn.disabled = false;
+      btn.textContent = 'Submit — Join the Movement';
+    });
+  }
+</script>
+
+<!-- ZEFFY DONATE SECTION -->
+<section class="zeffy-section" id="donate">
+  <div class="section-inner">
+    <p class="section-label">Support the Agenda</p>
+    <h2 class="section-title">Make a Donation</h2>
+    <p class="zeffy-body">
+      Every contribution — large or small — directly powers this agenda. Your support funds community outreach, voter education, agenda materials, and events across all 25 wards of Nyandarua County.
+    </p>
+
+    <!--
+      ══════════════════════════════════════════════════════
+      ZEFFY SETUP — 2 STEPS:
+
+      OPTION A — Embed widget (recommended):
+      1. Log into zeffy.com → your campaign form → Share → "Embed on website"
+      2. Copy the <iframe> code and paste it inside .zeffy-embed-wrap below,
+         replacing everything between the <!-- ZEFFY EMBED START/END comments.
+
+      OPTION B — Button redirect:
+      1. Log into zeffy.com → your campaign form → Share → copy the link
+      2. Replace YOUR_ZEFFY_LINK_HERE in the <a> tag below with that link
+      ══════════════════════════════════════════════════════
+    -->
+
+    <div class="zeffy-embed-wrap">
+      <!-- ZEFFY EMBED START — paste your Zeffy <iframe> here -->
+      <span class="zeffy-placeholder-icon">💛</span>
+      <span class="zeffy-placeholder-text">Zeffy donation form — paste embed code here</span>
+      <!-- ZEFFY EMBED END -->
+    </div>
+
+    <!-- OPTION B: Direct link button — replace href with your Zeffy link -->
+    <a href="YOUR_ZEFFY_LINK_HERE" target="_blank" rel="noopener" class="zeffy-alt-link">
+      💛 Donate via Zeffy
+    </a>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-tagline">A Stronger Nyandarua · A Prosperous Future · A United County</p>
+  <p style="font-size:0.9rem;color:var(--purple-pale);margin:0.5rem 0;">Integrity · Accountability · Quality Service</p>
+  <p class="footer-hashtags">#KimaniForNyandarua &nbsp;·&nbsp; #NyandaruaKwanza &nbsp;·&nbsp; #InvestInLeadership</p>
+  <p class="footer-contact" style="margin-top:0.75rem;">
+    📞 <a href="tel:6044018371">604 401 8371</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    ✉ <a href="mailto:p.karangu@alumni.ubc.ca">p.karangu@alumni.ubc.ca</a>
+  </p>
+  <p class="footer-contact" style="margin-top:0.4rem;">
+    <a href="https://www.facebook.com/profile.php?id=61552391662261" target="_blank" rel="noopener">Facebook Page ↗</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="https://chat.whatsapp.com/HW8raGgeqRl4OO8XJi4qK0?mode=gi_t" target="_blank" rel="noopener">WhatsApp Group ↗</a>
+  </p>
+  <small>© 2026 Dr. Kimani Wa Karangu — Gubernatorial Aspirant, Nyandarua County 2027. All rights reserved.</small>
+</footer>
+<script>
+  function toggleMenu() {
+    var btn = document.getElementById('hamburger');
+    var drawer = document.getElementById('nav-mobile');
+    var isOpen = drawer.classList.contains('open');
+    if (isOpen) {
+      btn.classList.remove('open');
+      drawer.classList.remove('open');
+    } else {
+      btn.classList.add('open');
+      drawer.classList.add('open');
+    }
+  }
+
+  function closeMenu() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('nav-mobile').classList.remove('open');
+  }
+
+  // Close menu on outside click
+  document.addEventListener('click', function(e) {
+    var nav = document.querySelector('nav');
+    if (!nav.contains(e.target)) closeMenu();
+  });
+</script>
+
+</body>
+</html>
+
